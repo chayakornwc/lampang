@@ -1,4 +1,4 @@
-# [Material Kit React - Free Material-UI Kit](https://creativetimofficial.github.io/material-kit-react/#/)
+# [LPL - UI]
 [![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 
 ![alt text](https://s3.amazonaws.com/creativetim_bucket/products/83/original/opt_mk_react_thumbnail.jpg "Material Kit Free")
