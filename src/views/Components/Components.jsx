@@ -46,7 +46,7 @@ class Components extends React.Component {
           }}
           {...rest}
         />
-        <Parallax image={require("assets/img/wallpaper2you_441400.jpg")}>
+        <Parallax image={require("assets/img/177288_406341352772138_811631963_o.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
