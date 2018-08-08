@@ -32,7 +32,7 @@ function Footer({ ...props }) {
                 className={classes.block}
                
               >
-                © 2018  BAMBOOTHAI CreatativeLabs.
+                © 2018 Siyaphat Senchunthichai.
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -64,7 +64,7 @@ function Footer({ ...props }) {
             className={aClasses}
             target="_blank"
           >
-          BAMBOOTHAI CreatativeLabs.
+           Siyaphat Senchunthichai.
           </a>{" "}
           for a better web.
         </div>

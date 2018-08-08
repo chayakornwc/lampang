@@ -16,6 +16,8 @@ import Parallax from "components/Parallax/Parallax.jsx";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
+import SectionBasics from "./Sections/SectionBasics.jsx";
+
 import SectionPills from "./Sections/SectionPills.jsx";
 import SectionNotifications from "./Sections/SectionNotifications.jsx";
 import SectionTypography from "./Sections/SectionTypography.jsx";
@@ -26,6 +28,7 @@ import purple from '@material-ui/core/colors/purple';
 import { connect } from 'react-redux';
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 import {loadKnowledge} from  "../../redux/actions/homepage";
+
 class Components extends React.Component {
   componentDidMount(){
     this.props.dispatch(loadKnowledge());
@@ -63,7 +66,7 @@ class Components extends React.Component {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           {home.isLoading &&  <CircularProgress className={styles.progress} color="secondary" />}
-         
+          <SectionBasics data={home} />
           <SectionTypography data={home} />
      
         </div>
