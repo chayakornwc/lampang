@@ -16,6 +16,7 @@ import Info from "components/Typography/Info.jsx";
 import Primary from "components/Typography/Primary.jsx";
 import Muted from "components/Typography/Muted.jsx";
 import Quote from "components/Typography/Quote.jsx";
+import SectionCarousel from "../Sections/SectionCarousel.jsx";
 import typographyStyle from "assets/jss/material-kit-react/views/componentsSections/typographyStyle.jsx";
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 import image from "assets/img/faces/avatar.jpg";
@@ -24,30 +25,30 @@ class SectionTypography extends React.Component {
     const { classes, data } = this.props;
     console.log(data)
     return (
+  
       <div className={classes.section}>
         <div className={classes.container}>
           <div id="typography">
-          
-           
-            <GridContainer>
-            {data && data.data && data.data.map(function(e,i){
-                  return (
-                    <div key={e.detail} className={classes.typo}>
-                    <div className={classes.note}>{e.cat_type}</div>
-                    <h3 className={classes.title}>{e.detail}</h3>
-                    <Muted>
-                    {ReactHtmlParser(e.detailT)}
-                    </Muted>
-                   
-                  </div>
-                  )
-                })}
-            </GridContainer>
-          </div>
-        
-          <div className={classes.space50} />
-        </div>
-      </div>
+            <div className={classes.space50} />
+              {data && data.data && data.data.map(function(e,i){
+                    return (
+                      <div key={e.detail} >
+                        <div className={classes.typo}>
+                          <h3>{e.detail}</h3>
+                        </div>
+                    
+                    
+                      <Muted>
+                      <SectionCarousel data={e.images}/>
+                      {ReactHtmlParser(e.detailT)}
+                      </Muted>
+                      <div className={classes.space50} />
+                    </div>
+                    )
+                  })}
+              </div>
+            </div>
+          </div>       
     );
   }
 }

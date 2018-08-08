@@ -16,14 +16,14 @@ import image3 from "assets/img/bg3.jpg";
 
 class SectionCarousel extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { data , classes } = this.props;
     const settings = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false
+      autoplay: true
     };
     return (
       <div className={classes.section}>
@@ -32,45 +32,19 @@ class SectionCarousel extends React.Component {
             <GridItem xs={12} sm={12} md={8} className={classes.marginAuto}>
               <Card carousel>
                 <Carousel {...settings}>
-                  <div>
-                    <img
-                      src={image1}
-                      alt="First slide"
-                      className="slick-image"
-                    />
-                    <div className="slick-caption">
-                      <h4>
-                        <LocationOn className="slick-icons" />Yellowstone
-                        National Park, United States
-                      </h4>
-                    </div>
-                  </div>
-                  <div>
-                    <img
-                      src={image2}
-                      alt="Second slide"
-                      className="slick-image"
-                    />
-                    <div className="slick-caption">
-                      <h4>
-                        <LocationOn className="slick-icons" />Somewhere Beyond,
-                        United States
-                      </h4>
-                    </div>
-                  </div>
-                  <div>
-                    <img
-                      src={image3}
-                      alt="Third slide"
-                      className="slick-image"
-                    />
-                    <div className="slick-caption">
-                      <h4>
-                        <LocationOn className="slick-icons" />Yellowstone
-                        National Park, United States
-                      </h4>
-                    </div>
-                  </div>
+                
+                  {data && data.map((e,i)=>{
+                      return(
+                        <div>
+                        <img
+                        src={require(`assets/image/${e.url}`)}
+                        alt={`${i} slide`}
+                        className="slick-image"
+                      />
+                      </div>
+                      )
+                    })}
+                 
                 </Carousel>
               </Card>
             </GridItem>

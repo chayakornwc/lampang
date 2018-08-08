@@ -66,8 +66,6 @@ class Components extends React.Component {
          
           <SectionTypography data={home} />
      
-          <SectionCarousel />
-         
         </div>
         <Footer />
       </div>
