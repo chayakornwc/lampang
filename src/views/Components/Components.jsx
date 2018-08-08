@@ -31,7 +31,9 @@ import SectionDownload from "./Sections/SectionDownload.jsx";
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 
 class Components extends React.Component {
-  
+  componentDidMount(){
+
+  }
   render() {
     const { classes, ...rest } = this.props;
     return (
@@ -52,7 +54,7 @@ class Components extends React.Component {
             <GridContainer>
               <GridItem>
                 <div className={classes.brand}>
-                  <h1 className={classes.title}>ลำปางหลวง.</h1>
+                  <h1 className={classes.title}>{`ลำปางหลวง`}</h1>
                   <h3 className={classes.subtitle}>
                     Art - LampangLuang.
                   </h3>
