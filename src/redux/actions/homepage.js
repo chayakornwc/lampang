@@ -4,14 +4,14 @@ import axios from 'axios';
 import config from '../../configure';
 //config
 const BASE_URL = config.BASE_URL
-export const loadCourse = (term='') => { //  initial course term  keeping empty string(*)
+export const loadKnowledge = () => { //  initial course term  keeping empty string(*)
     return(dispatch)=>{
-        dispatch({type:'LOAD_COURSES_PENDING'})
-        return axios.get(`${BASE_URL}/random`,{
+        dispatch({type:'LOAD_HOME_PENDING'})
+        return axios.get(`${BASE_URL}/knowledge`,{
         }).then(results =>{
-            dispatch({type:'LOAD_COURSES_SUCCESS', payload:results.data})
+            dispatch({type:'LOAD_HOME_SUCCESS', payload:results.data})
         }).catch(err =>{
-            dispatch({type:'LOAD_COURSES_REJECTED',payload: err.message})
+            dispatch({type:'LOAD_HOME_REJECTED',payload: err.message})
         })
     }
 }

@@ -15,27 +15,24 @@ import Button from "components/CustomButtons/Button.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import SectionBasics from "./Sections/SectionBasics.jsx";
-import SectionNavbars from "./Sections/SectionNavbars.jsx";
-import SectionTabs from "./Sections/SectionTabs.jsx";
+
 import SectionPills from "./Sections/SectionPills.jsx";
 import SectionNotifications from "./Sections/SectionNotifications.jsx";
 import SectionTypography from "./Sections/SectionTypography.jsx";
-import SectionJavascript from "./Sections/SectionJavascript.jsx";
+
 import SectionCarousel from "./Sections/SectionCarousel.jsx";
-import SectionCompletedExamples from "./Sections/SectionCompletedExamples.jsx";
-import SectionLogin from "./Sections/SectionLogin.jsx";
-import SectionExamples from "./Sections/SectionExamples.jsx";
-import SectionDownload from "./Sections/SectionDownload.jsx";
-
+import CircularProgress from '@material-ui/core/CircularProgress';
+import purple from '@material-ui/core/colors/purple';
+import { connect } from 'react-redux';
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
-
+import {loadKnowledge} from  "../../redux/actions/homepage";
 class Components extends React.Component {
   componentDidMount(){
-
+    this.props.dispatch(loadKnowledge());
   }
   render() {
-    const { classes, ...rest } = this.props;
+    const { home,classes, ...rest } = this.props;
+    console.log(home)
     return (
       <div>
         <Header
@@ -65,10 +62,9 @@ class Components extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
+          {home.isLoading &&  <CircularProgress className={styles.progress} color="secondary" />}
          
-          <SectionPills />
-          <SectionNotifications />
-          <SectionTypography />
+          <SectionTypography data={home} />
      
           <SectionCarousel />
          
@@ -79,4 +75,15 @@ class Components extends React.Component {
   }
 }
 
-export default withStyles(componentsStyle)(Components);
+const mapStateToProps = (state, ownProps) => {
+  return {
+    home: state.homeReducers.home
+  }
+}
+export default withStyles(componentsStyle)(connect(mapStateToProps)(Components));
+
+const styles = theme => ({
+  progress: {
+    margin: theme.spacing.unit * 2,
+  },
+});
