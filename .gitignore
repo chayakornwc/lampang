@@ -9,13 +9,16 @@
 # production
 /build
 
+# config
+/src/configure.jsx
+
 # misc
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-/src/configure.jsx
+
 package-lock.json
 
 npm-debug.log*
