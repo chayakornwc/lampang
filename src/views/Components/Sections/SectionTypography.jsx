@@ -16,14 +16,14 @@ import Info from "components/Typography/Info.jsx";
 import Primary from "components/Typography/Primary.jsx";
 import Muted from "components/Typography/Muted.jsx";
 import Quote from "components/Typography/Quote.jsx";
-import SectionCarousel from "../Sections/SectionCarousel.jsx";
+import SectionCarousel from "./SectionCarousel";
 import typographyStyle from "assets/jss/material-kit-react/views/componentsSections/typographyStyle.jsx";
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 import image from "assets/img/faces/avatar.jpg";
 class SectionTypography extends React.Component {
   render() {
     const { classes, data } = this.props;
-    console.log(data)
+   
     return (
   
       <div className={classes.section}>
@@ -32,7 +32,7 @@ class SectionTypography extends React.Component {
             <div className={classes.space50} />
               {data && data.data && data.data.map(function(e,i){
                     return (
-                      <div key={e.detail} >
+                      <div key={e.id_kn} >
                         <div className={classes.typo}>
                           <h3>{e.detail}</h3>
                         </div>

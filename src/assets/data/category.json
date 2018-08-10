@@ -4,7 +4,7 @@
         {"id":2, "name":"จิตรกรรม", "url":"painting"},
         {"id":3, "name":"ปฏิมากรรม", "url":"sculpture"},
         {"id":4,"name":"ประติมากรรม","url":"_sculpture"},
-        {"id":5,"name":"ลวดลายการประดับตกแต่ง","url":"Decorative pattern"},    
+        {"id":5,"name":"ลวดลายการประดับตกแต่ง","url":"Decorativepattern"},    
         {"id":6,"name":"ผังเมืองโบราณ","url":"blueprint"},
         {"id":7, "name":"ประเพณีประจำ","url":"festival"},
         {"id":8,"name":"พุทธศิลป์","url":"bhuddarts"},

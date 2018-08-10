@@ -16,13 +16,13 @@ import Parallax from "components/Parallax/Parallax.jsx";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
-import SectionBasics from "./Sections/SectionBasics.jsx";
+import SectionBasics from "./Sections/SectionBasics";
 
-import SectionPills from "./Sections/SectionPills.jsx";
-import SectionNotifications from "./Sections/SectionNotifications.jsx";
-import SectionTypography from "./Sections/SectionTypography.jsx";
+import SectionPills from "./Sections/SectionPills";
+import SectionNotifications from "./Sections/SectionNotifications";
+import SectionTypography from "./Sections/SectionTypography";
 
-import SectionCarousel from "./Sections/SectionCarousel.jsx";
+import SectionCarousel from "./Sections/SectionCarousel";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import purple from '@material-ui/core/colors/purple';
 import { connect } from 'react-redux';
@@ -35,7 +35,7 @@ class Components extends React.Component {
   }
   render() {
     const { home,classes, ...rest } = this.props;
-    console.log(home)
+  
     return (
       <div>
         <Header
@@ -66,7 +66,7 @@ class Components extends React.Component {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           {home.isLoading &&  <CircularProgress className={styles.progress} color="secondary" />}
-          <SectionBasics data={home} />
+          <SectionBasics data={require('assets/data/category.json')} />
           <SectionTypography data={home} />
      
         </div>

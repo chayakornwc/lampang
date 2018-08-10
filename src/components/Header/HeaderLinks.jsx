@@ -23,7 +23,7 @@ function HeaderLinks({ ...props }) {
   let cat = [];
   category && category.category.map(function(e,i){
     cat.push(
-      <Link to={e.url}  key={e.id} className={classes.dropdownLink}>
+      <Link to={`/knowledge/${e.url}`}  key={e.id} className={classes.dropdownLink}>
         {e.name}
     </Link>
     )

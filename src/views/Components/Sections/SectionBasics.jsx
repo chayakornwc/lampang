@@ -62,6 +62,7 @@ class SectionBasics extends React.Component {
   }
   render() {
     const {data, classes } = this.props;
+    console.log(data)
     return (
       <div className={classes.sections}>
         <div className={classes.container}>
@@ -99,8 +100,8 @@ class SectionBasics extends React.Component {
                   }}
                 >
                   <option value="" />
-                 {data && data.data && data.data.map(function(e,i){
-                   return <option value={e.id_cat}>{e.cat_type}</option>
+                 {data && data.category && data.category.map(function(e,i){
+                   return <option   key={e.id} value={e.id}>{e.name}</option>
                  })}
                 </Select>
                </FormControl>
