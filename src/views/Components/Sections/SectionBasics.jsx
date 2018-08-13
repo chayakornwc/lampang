@@ -32,37 +32,40 @@ class SectionBasics extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: [24, 22],
-      selectedEnabled: "b",
-      checkedA: true,
-      checkedB: false
+      words:'',
+      category:''
     };
     this.handleChangeEnabled = this.handleChangeEnabled.bind(this);
   }
   handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
-  };
+    this.setState({ 
+      [name]: event.target.value
+     })
+     
+  } 
+  handleTermSearch = ()=>{
+    const {words, category} = this.state
+    if(words && category){
+      this.props.handleTermSearch( category,words)
+    }
+    if(words){
+      this.props.handleTermSearch('',words)
+    }
+    if(category){
+      this.props.handleTermSearch(category,'')
+    }
+    if(!words && !category){
+      alert(`กุรุณาเลือกคำค้นหรือ อย่างใดอย่างนึง`)
+    }
+  }
+
   handleChangeEnabled(event) {
     this.setState({ selectedEnabled: event.target.value });
   }
-  handleToggle(value) {
-    const { checked } = this.state;
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    this.setState({
-      checked: newChecked
-    });
-  }
+  
   render() {
     const {data, classes } = this.props;
-    console.log(data)
+   
     return (
       <div className={classes.sections}>
         <div className={classes.container}>
@@ -78,6 +81,7 @@ class SectionBasics extends React.Component {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={this.handleChange('words')}
                     inputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
@@ -103,9 +107,10 @@ class SectionBasics extends React.Component {
                  {data && data.category && data.category.map(function(e,i){
                    return <option   key={e.id} value={e.id}>{e.name}</option>
                  })}
+                 
                 </Select>
                </FormControl>
-               <Button color="default">
+               <Button onClick={this.handleTermSearch}>
                   ค้นหา
                 </Button>
               </GridItem>

@@ -59,6 +59,7 @@ function CustomInput({ ...props }) {
           className={classes.labelRoot + " " + labelClasses}
           htmlFor={id}
           {...labelProps}
+       
         >
           {labelText}
         </InputLabel>
@@ -70,6 +71,7 @@ function CustomInput({ ...props }) {
           disabled: classes.disabled,
           underline: underlineClasses
         }}
+        onChange={props.onChange}
         id={id}
         {...inputProps}
       />

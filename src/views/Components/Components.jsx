@@ -30,8 +30,15 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import {loadKnowledge} from  "../../redux/actions/homepage";
 
 class Components extends React.Component {
+  constructor (props){
+    super(props)
+    this.handleTermSearch = this.handleTermSearch.bind(this);
+  }
   componentDidMount(){
     this.props.dispatch(loadKnowledge());
+  }
+  handleTermSearch(id, term=''){
+    this.props.dispatch(loadKnowledge(id,term))
   }
   render() {
     const { home,classes, ...rest } = this.props;
@@ -66,7 +73,7 @@ class Components extends React.Component {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           {home.isLoading &&  <CircularProgress className={styles.progress} color="secondary" />}
-          <SectionBasics data={require('assets/data/category.json')} />
+          <SectionBasics handleTermSearch={this.handleTermSearch}  data={require('assets/data/category.json')} />
           <SectionTypography data={home} />
      
         </div>
