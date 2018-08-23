@@ -23,7 +23,7 @@ import image from "assets/img/faces/avatar.jpg";
 class SectionTypography extends React.Component {
   render() {
     const { classes, data } = this.props;
-   
+  
     return (
   
       <div className={classes.section}>
@@ -36,8 +36,6 @@ class SectionTypography extends React.Component {
                         <div className={classes.typo}>
                           <h3>{e.detail}</h3>
                         </div>
-                    
-                    
                       <Muted>
                       <SectionCarousel data={e.images}/>
                       {ReactHtmlParser(e.detailT)}

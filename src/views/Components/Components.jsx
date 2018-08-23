@@ -18,13 +18,12 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
 import SectionBasics from "./Sections/SectionBasics";
 
-import SectionPills from "./Sections/SectionPills";
-import SectionNotifications from "./Sections/SectionNotifications";
+
 import SectionTypography from "./Sections/SectionTypography";
 
-import SectionCarousel from "./Sections/SectionCarousel";
+
 import CircularProgress from '@material-ui/core/CircularProgress';
-import purple from '@material-ui/core/colors/purple';
+import SectionLogin from './Sections/SectionLogin';
 import { connect } from 'react-redux';
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 import {loadKnowledge} from  "../../redux/actions/homepage";
@@ -75,8 +74,9 @@ class Components extends React.Component {
           {home.isLoading &&  <CircularProgress className={styles.progress} color="secondary" />}
           <SectionBasics handleTermSearch={this.handleTermSearch}  data={require('assets/data/category.json')} />
           <SectionTypography data={home} />
-     
+          <SectionLogin />
         </div>
+
         <Footer />
       </div>
     );

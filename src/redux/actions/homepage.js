@@ -4,7 +4,7 @@ import axios from 'axios';
 import config from '../../configure';
 //config
 const BASE_URL = config.BASE_URL
-export const loadKnowledge = (id,term) => { //  initial course term  keeping empty string(*)
+export const loadKnowledge = (id='',term='') => { //  initial course term  keeping empty string(*)
     return(dispatch)=>{
         dispatch({type:'LOAD_HOME_PENDING'})
         return axios.get(`${BASE_URL}/knowledge?id=${id}&words=${term}`,{
