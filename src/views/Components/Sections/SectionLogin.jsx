@@ -18,17 +18,22 @@ import Button from "components/CustomButtons/Button.jsx";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import loginStyle from "assets/jss/material-kit-react/views/componentsSections/loginStyle.jsx";
-
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 
 import { Field, reduxForm } from 'redux-form'
+
+const data = require('../../../lib/changwat');
 // import renderCheck from '../renderCheck'
 class SectionLogin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       checked: [24, 22],
-      selectedEnabled: "b",
+      selectedEnabled: "",
+      changwats:'',
       checkedA: true,
       checkedB: false,
       submited:true
@@ -37,7 +42,12 @@ class SectionLogin extends React.Component {
     this.btnToggle = this.btnToggle.bind(this)
   }
   handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+    if (name==='selectedEnabled'){
+      this.setState({ [name]: event.target.checked });
+    }else{
+      this.setState({[name]:event.target.value});
+    }
+
   };
   handleChangeEnabled(event) {
     this.setState({ selectedEnabled: event.target.value });
@@ -46,7 +56,12 @@ class SectionLogin extends React.Component {
     this.setState({
       submited:false
     })
+    let data = {
+        provider:this.state.changwats,
+        age:this.state.selectedEnabled,
+    }
   }
+ 
   handleToggle(value) {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
@@ -64,6 +79,7 @@ class SectionLogin extends React.Component {
   }
   render() {
     const { classes } = this.props;
+   
     return (
       <div className={classes.section}>
         <div className={classes.container}>
@@ -336,7 +352,24 @@ class SectionLogin extends React.Component {
                       />
                     </div>
                     
-                    
+                  <FormControl className={classes.formControl}>
+                    <InputLabel htmlFor="changwats">จังหวัดที่คุณอยู่</InputLabel>
+                      <Select
+                        native
+                        value={this.state.changwats}
+                        onChange={this.handleChange('changwats')}
+                        inputProps={{
+                          name: 'changwats',
+                          id: 'changwats',
+                        }}
+                      >
+                        <option value="" />
+                      {data &&  data.th.changwats.map(function(e,i){
+                        return <option   key={e.pid} value={e.name}>{e.name}</option>
+                      })}
+                      
+                      </Select>
+                    </FormControl>
 
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
