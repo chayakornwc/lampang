@@ -13,7 +13,7 @@ import legendReducers from './legendReducers';
 import paintingReducers from './paintingReducers';
 import sillaReducers from './sillaReducers'
 import sculptureReducers from './sculptureReducers'
-
+import surveyReducers from './surveyReducers'
 
 
 
@@ -31,6 +31,7 @@ const rootReducers = combineReducers({
     historyReducers,
     legendReducers,
     paintingReducers,
-    sillaReducers
+    sillaReducers,
+    surveyReducers
 });
 export default rootReducers;    

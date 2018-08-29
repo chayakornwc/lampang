@@ -21,8 +21,7 @@ import loginStyle from "assets/jss/material-kit-react/views/componentsSections/l
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
-
+import {saveSurvey} from '../../../redux/actions/survey';
 import { Field, reduxForm } from 'redux-form'
 
 const data = require('../../../lib/changwat');
@@ -60,6 +59,7 @@ class SectionLogin extends React.Component {
         provider:this.state.changwats,
         age:this.state.selectedEnabled,
     }
+    this.props.dispatch(saveSurvey(data))
   }
  
   handleToggle(value) {

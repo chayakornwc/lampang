@@ -12,7 +12,8 @@
         {"id":10,"name":"ประวัติศาสตร์","url":"history"},
         {"id":11,"name":"ตำนาน","url":"legend"},
         {"id":12,"name":"จารึก","url":"sila"},
-        {"id":13, "name":"คติจักรวาล","url":"galaxy"}
+        {"id":13, "name":"คติจักรวาล","url":"galaxy"},
+        {"id":14, "name":"สำรวจข้อมูล","url":"dashboard"}
     ]
     
 }

@@ -12,6 +12,7 @@ import History_ from 'views/Pages/History_';
 import Legend_ from 'views/Pages/Legend_'
 import Sila from 'views/Pages/Sila';
 import Galaxy from 'views/Pages/Galaxy'
+import Dashboard from 'views/Pages/Dashboard';
 
 var childRoutes = [
     {path:'architecture', component:Architecture},
@@ -27,6 +28,7 @@ var childRoutes = [
     {path:'legend',component:Legend_},
     {path:'sila',component:Sila},
     {path:'galaxy',component:Galaxy},
+    {path:'dashboard',component:Dashboard}
 ];
 
 export default childRoutes;
