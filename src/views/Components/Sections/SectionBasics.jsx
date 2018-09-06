@@ -79,13 +79,6 @@ class SectionBasics extends React.Component {
                       fullWidth: true
                     }}
                     onChange={this.handleChange('words')}
-                    inputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <i className="fas fa-search" />
-                        </InputAdornment>
-                      )
-                    }}
                   />
               </GridItem>
               <GridItem xs={12} sm={4} md={4} lg={3}>

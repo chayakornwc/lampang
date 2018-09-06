@@ -77,9 +77,3 @@ class Knowledge extends React.Component {
   }
 }
 export default withStyles(componentsStyle)(connect(mapStateToProps)(Knowledge));
-
-const styles = theme => ({
-  progress: {
-    margin: theme.spacing.unit * 2,
-  },
-}); 
