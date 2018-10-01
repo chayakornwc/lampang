@@ -1,12 +1,14 @@
 
 # Setting up local environment
-KitnipanDrivehub edited this page on Aug 6 · 10 revisions
-```
 
-install latest node and npm.
-install brew
+
+1. install latest node and npm.
+2. install brew
+```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-clone this repository and execute commands below
+```
+3. clone this repository and execute commands below
+```
 brew install ruby
 brew install postgresql
 brew install postgis
@@ -24,15 +26,20 @@ yarn install
 brew services start postgresql
 redis-server
 rails db:create
-Import data from our staging
+```
+4. Import data from our staging
+```
 Export db from Drivehub-staging app [how to export](https://devcenter.heroku.com/articles/heroku-postgres-import-export)
-pg_restore --verbose --no-acl --no-owner --clean -h localhost -U <your local machine username> -d drivehub_development ~/Downloads/<db file downloaded from heroku>
-run a local server with rails s.
+```
+```
+pg_restore --verbose --no-acl --no-owner --clean -h localhost -U <your local machine username> -d drivehub_development 
+~/Downloads/<db file downloaded from heroku>
+```
+5. run a local server with rails s.
+6. Debugging in Visual Studio Code
+7. Install Ruby extension
 
-Debugging in Visual Studio Code
-
-
-Install Ruby extension
+```
 Go to Debug view (⇧⌘D)
 Select breaking point
 Start Debugging 
@@ -43,3 +50,4 @@ Start Debugging
 - ⇧⌘F5 to Restart
 - ⇧F5 to Stop
 *Data inspection : Variables can be inspected in the VARIABLES section of the Debug view.
+```
