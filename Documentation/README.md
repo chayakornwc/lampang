@@ -28,8 +28,9 @@ Import data from our staging
 Export db from Drivehub-staging app [how to export](https://devcenter.heroku.com/articles/heroku-postgres-import-export)
 pg_restore --verbose --no-acl --no-owner --clean -h localhost -U <your local machine username> -d drivehub_development ~/Downloads/<db file downloaded from heroku>
 run a local server with rails s.
-
+`
 Debugging in Visual Studio Code
+`
 
 Install Ruby extension
 Go to Debug view (⇧⌘D)
